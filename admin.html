@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Week-end du club</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --navy:#1B2F6E; --red:#C0192C; --line:#E3E7F0; --ink:#1B2440; --muted:#6B7490; --ok:#1F8A5B; }
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    body{ font-family:'Open Sans',-apple-system,sans-serif; background:#F5F6FA; color:var(--ink); -webkit-font-smoothing:antialiased; }
+    input,select,textarea,button{ font-family:inherit; }
+
+    /* ---------- Écran de connexion ---------- */
+    .login{ min-height:100vh; display:grid; place-items:center; padding:24px; }
+    .login__card{ width:100%; max-width:360px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:32px 26px; box-shadow:0 10px 40px rgba(27,47,110,.1); text-align:center; }
+    .login__logo{ width:60px; height:60px; border-radius:50%; object-fit:cover; background:#fff; box-shadow:0 0 0 3px rgba(27,47,110,.12); margin:0 auto 16px; }
+    .login__card h1{ font-size:1.3rem; color:var(--navy); }
+    .login__card p{ font-size:13.5px; color:var(--muted); margin:6px 0 22px; }
+    .login__card input{ width:100%; border:1.5px solid var(--line); border-radius:10px; padding:13px 14px; font-size:15px; outline:none; }
+    .login__card input:focus{ border-color:var(--navy); }
+    .login__card button{ width:100%; margin-top:14px; background:var(--red); color:#fff; border:none; border-radius:10px; padding:14px; font-size:15px; font-weight:700; cursor:pointer; }
+    .login__err{ color:var(--red); font-size:13px; font-weight:700; margin-top:12px; }
+
+    /* ---------- En-tête ---------- */
+    .top{ position:sticky; top:0; z-index:5; background:var(--navy); color:#fff; }
+    .top__in{ max-width:900px; margin:0 auto; display:flex; align-items:center; gap:12px; padding:14px clamp(16px,4vw,28px); }
+    .top__logo{ width:40px; height:40px; border-radius:50%; object-fit:cover; background:#fff; box-shadow:0 0 0 2px rgba(255,255,255,.25); flex:none; }
+    .top__title{ line-height:1.15; }
+    .top__title b{ display:block; font-size:15px; }
+    .top__title span{ font-size:11.5px; color:#B9C2DE; letter-spacing:.5px; }
+    .top__logout{ margin-left:auto; background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.25); border-radius:8px; padding:8px 14px; font-size:13px; font-weight:700; cursor:pointer; }
+
+    /* ---------- Contenu ---------- */
+    main{ max-width:900px; margin:0 auto; padding:clamp(16px,4vw,28px); }
+    .card{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:clamp(18px,3vw,24px); margin-bottom:20px; }
+    .card__head{ display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+    .card__num{ display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--navy); color:#fff; font-weight:800; font-size:14px; flex:none; }
+    .card__head h2{ font-size:1.05rem; color:var(--navy); }
+    label.lbl{ display:block; font-size:12.5px; font-weight:700; color:var(--muted); margin-bottom:6px; }
+    .in{ width:100%; border:1.5px solid var(--line); border-radius:9px; padding:11px 12px; font-size:14px; outline:none; background:#fff; }
+    .in:focus{ border-color:var(--navy); }
+
+    /* ---------- Tableaux dynamiques ---------- */
+    .tbl-wrap{ margin-top:14px; }
+    table{ width:100%; border-collapse:collapse; }
+    thead th{ text-align:left; font-size:11px; letter-spacing:.4px; text-transform:uppercase; color:var(--muted); font-weight:800; padding:6px 8px; }
+    tbody td{ padding:5px 8px; vertical-align:middle; }
+    tbody td .in{ padding:9px 10px; }
+    .row-act{ width:44px; text-align:center; }
+    .del{ width:32px; height:32px; border-radius:8px; border:1.5px solid var(--line); background:#fff; color:var(--red); font-size:14px; font-weight:800; cursor:pointer; line-height:1; }
+    .del:hover{ background:var(--red); color:#fff; border-color:var(--red); }
+
+    .btn-add{ margin-top:12px; background:#fff; color:var(--navy); border:1.5px dashed #B9C2DE; border-radius:10px; padding:11px 16px; font-size:14px; font-weight:700; cursor:pointer; }
+    .btn-add:hover{ border-style:solid; }
+    .btn-save{ margin-top:16px; background:var(--red); color:#fff; border:none; border-radius:10px; padding:13px 22px; font-size:14.5px; font-weight:700; cursor:pointer; box-shadow:0 6px 18px rgba(192,25,44,.3); }
+    .btn-save:hover{ transform:translateY(-1px); }
+    .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .counter{ font-size:12px; color:var(--muted); text-align:right; margin-top:6px; }
+    input[type=file].in{ padding:9px 10px; }
+    .news-preview{ margin-top:10px; }
+    .news-preview img{ max-width:100%; max-height:180px; border-radius:10px; border:1px solid var(--line); display:block; }
+
+    /* ---------- Tableaux responsive (cartes sur mobile) ---------- */
+    @media (max-width:720px){
+      thead{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+      tbody tr{ display:block; border:1px solid var(--line); border-radius:12px; padding:6px; margin-bottom:12px; }
+      tbody td{ display:flex; align-items:center; gap:10px; padding:6px 6px; }
+      tbody td::before{ content:attr(data-label); flex:none; width:88px; font-size:11.5px; font-weight:800; color:var(--muted); text-transform:uppercase; }
+      .row-act{ width:auto; justify-content:flex-end; }
+      .row-act::before{ content:""; width:0; }
+      .grid2{ grid-template-columns:1fr; }
+    }
+
+    /* ---------- Toast de confirmation ---------- */
+    .toast{ position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px); background:var(--ok); color:#fff; font-weight:700; font-size:14px; padding:13px 22px; border-radius:10px; box-shadow:0 10px 30px rgba(31,138,91,.4); opacity:0; transition:all .3s; z-index:50; }
+    .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+    .note{ font-size:12px; color:var(--muted); text-align:center; padding:8px 0 26px; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ CONNEXION ============ -->
+  <div class="login" id="login">
+    <form class="login__card" id="login-form">
+      <img class="login__logo" id="login-logo" src="images/logo.svg" alt="Logo">
+      <h1>Espace admin</h1>
+      <p>Gestion du programme et des résultats du week-end.</p>
+      <input type="password" id="login-pass" placeholder="Mot de passe" autocomplete="current-password" required>
+      <button type="submit">Se connecter</button>
+      <div class="login__err" id="login-err" hidden>Mot de passe incorrect.</div>
+    </form>
+  </div>
+
+  <!-- ============ APPLICATION ============ -->
+  <div id="app" hidden>
+    <header class="top">
+      <div class="top__in">
+        <img class="top__logo" id="admin-logo" src="images/logo.svg" alt="Logo">
+        <div class="top__title">
+          <b id="admin-club">Paray FC</b>
+          <span>ADMINISTRATION DU WEEK-END</span>
+        </div>
+        <button class="top__logout" id="logout">Quitter</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- SECTION 1 — PROGRAMME -->
+      <section class="card">
+        <div class="card__head"><span class="card__num">1</span><h2>Programme du week-end</h2></div>
+        <label class="lbl" for="weekend-date">Date du week-end</label>
+        <input class="in" type="text" id="weekend-date" placeholder="Samedi 28 &amp; Dimanche 29 juin">
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Lieu</th><th>Équipe</th><th>Adversaire</th><th>Type</th><th>Heure</th><th></th></tr></thead>
+            <tbody id="prog-rows"></tbody>
+          </table>
+        </div>
+        <button class="btn-add" id="prog-add" type="button">+ Ajouter une équipe</button>
+        <div><button class="btn-save" id="prog-save" type="button">💾 Enregistrer le programme</button></div>
+      </section>
+
+      <!-- SECTION 2 — RÉSULTATS -->
+      <section class="card">
+        <div class="card__head"><span class="card__num">2</span><h2>Résultats du week-end</h2></div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Lieu</th><th>Équipe</th><th>Adversaire</th><th>Type</th><th>Heure</th><th>Score</th><th>Résultat</th><th></th></tr></thead>
+            <tbody id="res-rows"></tbody>
+          </table>
+        </div>
+        <button class="btn-add" id="res-add" type="button">+ Ajouter un résultat</button>
+        <div><button class="btn-save" id="res-save" type="button">💾 Enregistrer les résultats</button></div>
+      </section>
+
+      <!-- SECTION 3 — ACTUALITÉ -->
+      <section class="card">
+        <div class="card__head"><span class="card__num">3</span><h2>Actualité rapide</h2></div>
+        <div class="grid2">
+          <div>
+            <label class="lbl" for="news-title">Titre</label>
+            <input class="in" type="text" id="news-title" placeholder="Titre de l'actualité">
+          </div>
+          <div>
+            <label class="lbl" for="news-cat">Catégorie</label>
+            <select class="in" id="news-cat">
+              <option>Résultats</option><option>Événement</option><option>Recrutement</option><option>Communiqué</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-top:14px;">
+          <label class="lbl" for="news-text">Texte court</label>
+          <textarea class="in" id="news-text" rows="4" maxlength="300" placeholder="Quelques phrases..."></textarea>
+          <div class="counter"><span id="news-count">0</span>/300</div>
+        </div>
+        <div style="margin-top:14px;">
+          <label class="lbl" for="news-photo">Photo (optionnel)</label>
+          <input class="in" type="file" id="news-photo" accept="image/*">
+          <div class="news-preview" id="news-preview" hidden><img id="news-preview-img" alt="Aperçu de la photo"></div>
+        </div>
+        <button class="btn-save" id="news-save" type="button">💾 Publier l'actu</button>
+      </section>
+
+      <p class="note">Accès protégé côté navigateur · Données enregistrées localement (localStorage)</p>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

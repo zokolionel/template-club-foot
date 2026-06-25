@@ -76,6 +76,43 @@ succès de démonstration. Pour recevoir réellement les messages, branchez-les 
 
 ---
 
+## 🗓️ Back-office du week-end (`admin.html`)
+
+Une interface protégée par mot de passe pour gérer **le programme, les résultats
+et l'actualité du week-end** (avec photo) — sans toucher au code.
+
+- Accès : `admin.html` · mot de passe par défaut **`admin2026`** (modifiable dans `js/admin.js`)
+- L'accueil affiche automatiquement le programme, les 3 derniers résultats et la dernière actu.
+
+**Deux modes :**
+- **Local** (par défaut) : données dans le navigateur (localStorage). Parfait pour tester,
+  mais visible uniquement sur l'appareil qui saisit.
+- **En ligne** (recommandé en production) : renseignez `backend` dans `js/config.js` avec un
+  projet **Supabase** gratuit → les données et les photos sont partagées avec **tous les visiteurs**.
+
+Pour activer le mode en ligne : créez un projet sur supabase.com, exécutez le SQL ci-dessous,
+créez un bucket Storage **public** nommé `photos`, puis collez votre URL de projet et votre clé
+« publishable » dans `CONFIG.backend`.
+
+<details><summary>SQL à exécuter dans Supabase</summary>
+
+```sql
+create table if not exists public.content (
+  key text primary key,
+  data jsonb not null default '{}'::jsonb,
+  updated_at timestamptz not null default now()
+);
+alter table public.content enable row level security;
+create policy "Lecture publique"   on public.content for select to anon using (true);
+create policy "Ecriture publique"  on public.content for insert to anon with check (true);
+create policy "Mise a jour publique" on public.content for update to anon using (true) with check (true);
+
+-- Après avoir créé un bucket public nommé "photos" :
+create policy "Upload public dans photos"
+  on storage.objects for insert to anon with check (bucket_id = 'photos');
+```
+</details>
+
 ## 🌐 Déploiement
 
 Site 100 % statique → se déploie en 1 clic, sans configuration :

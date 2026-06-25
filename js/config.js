@@ -15,10 +15,7 @@ const CONFIG = {
   city:        'Votre Ville',
   foundedYear: 1920,
 
-  /* ---------- Couleurs (pilotent tout le thème du site) ----------
-     primary   = couleur dominante (header, titres, fonds sombres)
-     secondary = couleur d'action (boutons, accents forts)
-     accent    = couleur de détail (surlignages, badges)             */
+  /* ---------- Couleurs (pilotent tout le thème du site) ---------- */
   colors: {
     primary:   '#1F2A44',
     secondary: '#2E7D5B',
@@ -27,17 +24,17 @@ const CONFIG = {
 
   /* ---------- Coordonnées ---------- */
   email: 'contact@votreclub.fr',
-  phone: '',                 // ex. '01 23 45 67 89' — laissez vide pour masquer la ligne
+  phone: '',
   address: {
     street: '1 avenue du Stade',
     zip:    '00000',
     city:   'Votre Ville',
   },
 
-  /* ---------- Logo (remplacez par le logo de votre club) ---------- */
+  /* ---------- Logo ---------- */
   logoUrl: 'images/logo.svg',
 
-  /* ---------- Réseaux sociaux (URL complète) ---------- */
+  /* ---------- Réseaux sociaux ---------- */
   social: {
     facebook:  '#',
     instagram: '#',
@@ -54,6 +51,19 @@ const CONFIG = {
   },
   memberCount: 300,
   teamCount:   18,
+
+  /* ---------- Back-office du week-end (optionnel) ----------
+     • Laissez VIDE → l'admin fonctionne en local (localStorage),
+       sur un seul navigateur (idéal pour tester).
+     • Pour partager le week-end EN LIGNE entre tous les visiteurs,
+       créez un projet Supabase gratuit, puis collez ici :
+         - l'URL du projet  (ex. https://xxxx.supabase.co)
+         - la clé "publishable" (publique, sans risque)
+       Voir le README pour la table "content" et le bucket "photos". */
+  backend: {
+    supabaseUrl: '',
+    supabaseKey: '',
+  },
 };
 
 window.CONFIG = CONFIG;
