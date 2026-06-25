@@ -1,19 +1,13 @@
 /* ===================================================================
-   PARAY FC — Affichage du week-end sur l'accueil
+   PARAY FC — Programme & résultats du week-end sur l'accueil
    Lit le Store (Supabase en ligne, repli localStorage) et injecte :
    - le programme du week-end (tableau)
    - les 3 derniers résultats
-   - la dernière actualité publiée
+   (Les actualités sont gérées par js/news.js)
    =================================================================== */
 (function () {
   'use strict';
 
-  var CAT_COLORS = {
-    'Résultats':   { bg: 'var(--secondary)', fg: '#fff' },
-    'Événement':   { bg: 'var(--accent)',    fg: 'var(--primary)' },
-    'Recrutement': { bg: 'var(--navy-text)', fg: '#fff' },
-    'Communiqué':  { bg: 'var(--navy-dark)', fg: '#fff' }
-  };
   var OUT_CLASS = { 'Victoire': 'win', 'Nul': 'draw', 'Défaite': 'loss', 'N/A': 'na' };
 
   function esc(s) { var d = document.createElement('div'); d.textContent = (s == null ? '' : String(s)); return d.innerHTML; }
@@ -21,10 +15,10 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     if (typeof Store === 'undefined') return;
+    if (!document.getElementById('weekend')) return;
     Store.getAll().then(function (all) {
       renderWeekend(all.program, all.results);
-      renderLatestNews(all.news);
-    }).catch(function () { /* base indisponible : on n'affiche rien */ });
+    }).catch(function () { /* base indisponible */ });
   });
 
   function renderWeekend(prog, res) {
@@ -83,34 +77,5 @@
       rwrap.innerHTML = '';
       rempty.hidden = false;
     }
-  }
-
-  function renderLatestNews(n) {
-    var grid = document.getElementById('news-grid');
-    if (!grid || !n || !n.title) return;
-
-    var c = CAT_COLORS[n.category] || { bg: 'var(--navy-text)', fg: '#fff' };
-    var dateStr = '';
-    if (n.date) {
-      var d = new Date(n.date);
-      if (!isNaN(d)) dateStr = d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-    }
-
-    var card = document.createElement('a');
-    card.className = 'news-card news-card--featured';
-    card.href = 'actualites.html';
-    var media = n.image
-      ? '<img class="news-card__img" src="' + esc(n.image) + '" alt="">'
-      : '<div class="img-placeholder">À la une</div>';
-    card.innerHTML =
-      '<div class="news-card__media">' + media +
-      '<span class="news-card__cat" style="background:' + c.bg + ';color:' + c.fg + ';">' + esc(String(n.category).toUpperCase()) + '</span></div>' +
-      '<div class="news-card__body">' +
-      '<span class="news-card__date">' + esc(dateStr) + '</span>' +
-      '<h3 class="news-card__title">' + esc(n.title) + '</h3>' +
-      '<p class="news-card__excerpt">' + esc(n.text) + '</p>' +
-      '<span class="news-card__more">Lire l\'article →</span>' +
-      '</div>';
-    grid.prepend(card);
   }
 })();

@@ -63,6 +63,10 @@
     input[type=file].in{ padding:9px 10px; }
     .news-preview{ margin-top:10px; }
     .news-preview img{ max-width:100%; max-height:180px; border-radius:10px; border:1px solid var(--line); display:block; }
+    .news-list{ margin-top:16px; display:flex; flex-direction:column; gap:8px; }
+    .na-row{ display:flex; align-items:center; gap:10px; background:#F8F9FC; border:1px solid var(--line); border-radius:9px; padding:9px 12px; }
+    .na-row__t{ flex:1; font-size:13.5px; color:var(--ink); }
+    .na-empty{ font-size:13px; color:var(--muted); }
 
     /* ---------- Tableaux responsive (cartes sur mobile) ---------- */
     @media (max-width:720px){
@@ -101,7 +105,7 @@
       <div class="top__in">
         <img class="top__logo" id="admin-logo" src="images/logo.svg" alt="Logo">
         <div class="top__title">
-          <b id="admin-club">Paray FC</b>
+          <b id="admin-club">Votre Club FC</b>
           <span>ADMINISTRATION DU WEEK-END</span>
         </div>
         <button class="top__logout" id="logout">Quitter</button>
@@ -158,11 +162,16 @@
           <div class="counter"><span id="news-count">0</span>/300</div>
         </div>
         <div style="margin-top:14px;">
+          <label class="lbl" for="news-long">Article complet (optionnel)</label>
+          <textarea class="in" id="news-long" rows="6" placeholder="Texte complet de l'article. Le bouton « Lire » n'apparaît que si ce champ dépasse 100 caractères."></textarea>
+        </div>
+        <div style="margin-top:14px;">
           <label class="lbl" for="news-photo">Photo (optionnel)</label>
           <input class="in" type="file" id="news-photo" accept="image/*">
           <div class="news-preview" id="news-preview" hidden><img id="news-preview-img" alt="Aperçu de la photo"></div>
         </div>
         <button class="btn-save" id="news-save" type="button">💾 Publier l'actu</button>
+        <div class="news-list" id="news-list"></div>
       </section>
 
       <p class="note">Accès protégé côté navigateur · Données enregistrées localement (localStorage)</p>

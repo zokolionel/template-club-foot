@@ -101,7 +101,7 @@
 
         <label class="field">
           <span>Nom du club</span>
-          <input type="text" id="f-name" value="FC Démo" maxlength="28">
+          <input type="text" id="f-name" value="Votre Club FC" maxlength="28">
         </label>
 
         <div class="field">
@@ -160,7 +160,7 @@
   <script>
     (function () {
       'use strict';
-      var DEFAULTS = { name:'FC Démo', primary:'#1F2A44', secondary:'#2E7D5B', accent:'#E8B43A' };
+      var DEFAULTS = { name:'Votre Club FC', primary:'#1F2A44', secondary:'#2E7D5B', accent:'#E8B43A' };
       var PRESETS = [
         { label:'Sobre',    primary:'#1F2A44', secondary:'#2E7D5B', accent:'#E8B43A' },
         { label:'Rouge',    primary:'#13224F', secondary:'#C0192C', accent:'#F2B705' },
@@ -194,7 +194,7 @@
           r.style.setProperty('--secondary', sEl.value);
           r.style.setProperty('--accent', aEl.value);
           doc.querySelectorAll('[data-config="clubName"]').forEach(function (el) {
-            el.textContent = nameEl.value || 'FC Démo';
+            el.textContent = nameEl.value || 'Votre Club FC';
           });
         } catch (e) {
           /* file:// peut bloquer l'accès à l'iframe — fonctionne une fois déployé */

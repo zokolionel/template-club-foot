@@ -1,17 +1,11 @@
 /* ===================================================================
    TEMPLATE SITE CLUB DE FOOT — CONFIGURATION CENTRALE
-   -------------------------------------------------------------------
-   👉 C'est le SEUL fichier à modifier pour adapter le site à VOTRE club.
-   Changez une valeur ici, et elle se met à jour automatiquement
-   dans le header, le footer et la page d'accueil (et les couleurs
-   recolorent tout le site).
-
-   Le moteur d'injection se trouve dans js/main.js (applyConfig).
+   👉 Le SEUL fichier à modifier pour adapter le site à VOTRE club.
    =================================================================== */
 const CONFIG = {
 
   /* ---------- Identité du club ---------- */
-  clubName:    'FC Démo',
+  clubName:    'Votre Club FC',
   city:        'Votre Ville',
   foundedYear: 1920,
 
@@ -34,7 +28,7 @@ const CONFIG = {
   /* ---------- Logo ---------- */
   logoUrl: 'images/logo.svg',
 
-  /* ---------- Réseaux sociaux ---------- */
+  /* ---------- Réseaux sociaux (URL complète, ou '#' pour masquer le lien) ---------- */
   social: {
     facebook:  '#',
     instagram: '#',
@@ -44,22 +38,14 @@ const CONFIG = {
   /* ---------- Boutique ---------- */
   shopUrl: 'boutique.html',
 
-  /* ---------- Sportif ---------- */
-  flagshipTeam: {
-    name:  'Équipe première',
-    level: 'Régionale 1',
-  },
-  memberCount: 300,
-  teamCount:   18,
+  /* ---------- Mesure d'audience (Google Analytics) ----------
+     Mettez votre identifiant (ex. 'G-XXXXXXXXXX') pour activer GA
+     APRÈS consentement du visiteur. Vide = aucune mesure. */
+  analyticsId: '',
 
   /* ---------- Back-office du week-end (optionnel) ----------
-     • Laissez VIDE → l'admin fonctionne en local (localStorage),
-       sur un seul navigateur (idéal pour tester).
-     • Pour partager le week-end EN LIGNE entre tous les visiteurs,
-       créez un projet Supabase gratuit, puis collez ici :
-         - l'URL du projet  (ex. https://xxxx.supabase.co)
-         - la clé "publishable" (publique, sans risque)
-       Voir le README pour la table "content" et le bucket "photos". */
+     Vide = mode local (localStorage). Renseignez un projet Supabase
+     pour partager le week-end en ligne (voir README). */
   backend: {
     supabaseUrl: '',
     supabaseKey: '',
