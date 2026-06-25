@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Paray FC</title>
+  <meta name="description" content="Contactez le Paray FC : adresse du stade, emails général/technique/équipement, plan d'accès et formulaire.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html#accueil" class="nav__logo">
+        <img src="images/logo.svg" data-config-src="logoUrl" alt="Logo du club" class="logo-img">
+        <span class="logo-text">
+          <span class="logo-name" data-config="clubName">Paray FC</span>
+          <span class="logo-since" data-config="since">DEPUIS 1947</span>
+        </span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html#accueil" class="nav__link">Accueil</a>
+        <a href="club.html" class="nav__link">Le Club</a>
+        <a href="equipes.html" class="nav__link">Nos Équipes</a>
+        <a href="actualites.html" class="nav__link">Actualités</a>
+        <a href="partenaires.html" class="nav__link">Partenaires</a>
+        <a href="rejoindre.html" class="nav__link">Nous rejoindre</a>
+        <a href="boutique.html" class="nav__link">Boutique</a>
+        <a href="contact.html" class="nav__link is-active">Contact</a>
+        <a href="rejoindre.html" class="nav__cta">Inscription</a>
+      </div>
+      <button class="nav__burger" data-burger aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span><span></span><span></span><span></span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <a href="index.html#accueil" class="mobile-menu__link">Accueil</a>
+      <a href="club.html" class="mobile-menu__link">Le Club</a>
+      <a href="equipes.html" class="mobile-menu__link">Nos Équipes</a>
+      <a href="actualites.html" class="mobile-menu__link">Actualités</a>
+      <a href="partenaires.html" class="mobile-menu__link">Partenaires</a>
+      <a href="rejoindre.html" class="mobile-menu__link">Nous rejoindre</a>
+      <a href="boutique.html" class="mobile-menu__link">Boutique</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="rejoindre.html" class="mobile-menu__cta">S'inscrire au club</a>
+    </div>
+  </header>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <span class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep">/</span> <span class="current">Contact</span></span>
+      <h1>Contactez-nous</h1>
+      <p>Une question sur une inscription, un partenariat ou la vie du club ? Écrivez-nous ou passez nous voir pendant la permanence.</p>
+    </div>
+  </section>
+
+  <!-- ============ COORDONNÉES + FORMULAIRE ============ -->
+  <section class="section">
+    <div class="split-grid">
+      <!-- Coordonnées -->
+      <div>
+        <span class="eyebrow">NOS COORDONNÉES</span>
+        <h2 class="section-title">Où nous trouver</h2>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-item__icon" style="background:var(--secondary);">📍</span>
+            <div><span class="info-item__label">ADRESSE</span><span class="info-item__value">Stade Paul Vaillant-Couturier — 1 rue de Kruft, 91550 Paray-Vieille-Poste</span></div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon" style="background:var(--accent);">✉️</span>
+            <div><span class="info-item__label">EMAIL GÉNÉRAL</span><a href="mailto:parayfootball@gmail.com" class="info-item__value">parayfootball@gmail.com</a><span class="info-item__desc">Questions générales, inscriptions et vie du club.</span></div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon" style="background:var(--navy-text);">✉️</span>
+            <div><span class="info-item__label">EMAIL TECHNIQUE</span><a href="mailto:technique.parayfc@gmail.com" class="info-item__value">technique.parayfc@gmail.com</a><span class="info-item__desc">Tout dysfonctionnement terrain & organisation.</span></div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon" style="background:var(--navy-dark);">✉️</span>
+            <div><span class="info-item__label">EMAIL ÉQUIPEMENT</span><a href="mailto:equipement.parayfc@gmail.com" class="info-item__value">equipement.parayfc@gmail.com</a><span class="info-item__desc">Commandes de matériel et équipements du club.</span></div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon" style="background:#5B647E;">🕑</span>
+            <div><span class="info-item__label">PERMANENCE</span><span class="info-item__value">Mercredi 14h-18h · Samedi 9h-12h au club-house</span></div>
+          </div>
+        </div>
+        <!-- Carte Google Maps -->
+        <div class="map-frame">
+          <iframe title="Plan d'accès Paray FC" src="https://www.google.com/maps?q=1%20rue%20de%20Kruft,%2091550%20Paray-Vieille-Poste&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="form-card">
+        <div class="form-success" data-form-success hidden>
+          <span class="form-success__icon">✓</span>
+          <h3>Message envoyé !</h3>
+          <p>Merci, nous vous répondrons dans les meilleurs délais.</p>
+        </div>
+        <!-- Pour un envoi réel : ajoutez action="https://formspree.io/f/VOTRE_ID" method="POST" et retirez data-demo-form -->
+        <form data-demo-form>
+          <h3>Écrivez-nous</h3>
+          <label class="field block" style="margin-top:0;">Nom complet<input name="nom" required placeholder="Votre nom"></label>
+          <label class="field block">Email<input name="email" type="email" required placeholder="vous@email.fr"></label>
+          <label class="field block">Votre demande concerne
+            <select name="destinataire">
+              <option>Question générale / inscription</option>
+              <option>Technique — terrain & organisation</option>
+              <option>Équipement & matériel</option>
+            </select>
+          </label>
+          <label class="field block">Message<textarea name="message" rows="5" required placeholder="Votre message..."></textarea></label>
+          <button type="submit" class="form-submit">Envoyer le message →</button>
+          <p class="form-note">Votre message est dirigé vers le bon interlocuteur selon l'objet choisi.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-club">
+        <div class="footer-club__top">
+          <img src="images/logo.svg" data-config-src="logoUrl" alt="Logo du club" class="footer-club__logo">
+          <span class="footer-club__name" data-config="clubName">Paray FC</span>
+        </div>
+        <p class="footer-club__text" data-config="aboutText">Le club de football de Paray-Vieille-Poste depuis 1947. 524 licenciés, 31 équipes, une même passion.</p>
+        <div class="social">
+          <a href="#" data-config-href="social.facebook" aria-label="Facebook" class="social__link">f</a>
+          <a href="#" data-config-href="social.instagram" aria-label="Instagram" class="social__link">IG</a>
+          <a href="#" data-config-href="social.tiktok" aria-label="TikTok" class="social__link">TT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col__title">Navigation</h4>
+        <a href="index.html#accueil" class="footer-link">Accueil</a>
+        <a href="club.html" class="footer-link">Le Club</a>
+        <a href="equipes.html" class="footer-link">Nos Équipes</a>
+        <a href="actualites.html" class="footer-link">Actualités</a>
+        <a href="partenaires.html" class="footer-link">Partenaires</a>
+        <a href="rejoindre.html" class="footer-link">Nous rejoindre</a>
+        <a href="boutique.html" class="footer-link">Boutique</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col__title">Contact</h4>
+        <p class="footer-contact">📍 <span data-config-html="addressHtml">1 rue de Kruft<br>91550 Paray-Vieille-Poste</span></p>
+        <p class="footer-contact" data-config-show="phone" hidden>📞 <a data-config="phone" data-config-href="telHref" href="#"></a></p>
+        <p class="footer-contact" style="margin-top:12px;">✉️ <a href="mailto:parayfootball@gmail.com" data-config="email" data-config-href="emailHref">parayfootball@gmail.com</a></p>
+        <p class="footer-contact--muted">Permanence : mercredi 14h-18h<br>et samedi 9h-12h au club-house</p>
+      </div>
+      <div class="footer-col footer-shop">
+        <h4 class="footer-col__title">Boutique officielle</h4>
+        <p>Maillots, survêtements et accessoires aux couleurs du club.</p>
+        <a href="boutique.html" data-config-href="shopUrl" class="footer-shop__btn">Voir la boutique →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Paray Football Club · Affilié à la FFF</span>
+      <span>Mentions légales · Politique de confidentialité</span>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

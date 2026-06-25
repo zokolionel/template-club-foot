@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo du club">
+  <circle cx="32" cy="32" r="31" fill="#1F2A44"/>
+  <circle cx="32" cy="32" r="29.5" fill="none" stroke="#E8B43A" stroke-width="3"/>
+  <circle cx="32" cy="32" r="16" fill="#ffffff"/>
+  <polygon points="32,24 38.1,28.4 35.8,35.6 28.2,35.6 25.9,28.4" fill="#1F2A44"/>
+  <path d="M32 16 L32 24 M48 32 L38.1 28.4 M41.9 46 L35.8 35.6 M22.1 46 L28.2 35.6 M16 32 L25.9 28.4"
+        stroke="#1F2A44" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,18 @@
+# Fichiers système Windows / macOS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Dossiers d'éditeur
+.vscode/
+.idea/
+
+# Logs et temporaires
+*.log
+*.tmp
+
+# Dépendances (au cas où tu ajoutes du Node plus tard)
+node_modules/
+
+# Vercel
+.vercel/

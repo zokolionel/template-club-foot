@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actualités — Paray FC</title>
+  <meta name="description" content="Résultats, recrutement, événements et communiqués du Paray Football Club, avec galerie photos par événement.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html#accueil" class="nav__logo">
+        <img src="images/logo.svg" data-config-src="logoUrl" alt="Logo du club" class="logo-img">
+        <span class="logo-text">
+          <span class="logo-name" data-config="clubName">Paray FC</span>
+          <span class="logo-since" data-config="since">DEPUIS 1947</span>
+        </span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html#accueil" class="nav__link">Accueil</a>
+        <a href="club.html" class="nav__link">Le Club</a>
+        <a href="equipes.html" class="nav__link">Nos Équipes</a>
+        <a href="actualites.html" class="nav__link is-active">Actualités</a>
+        <a href="partenaires.html" class="nav__link">Partenaires</a>
+        <a href="rejoindre.html" class="nav__link">Nous rejoindre</a>
+        <a href="boutique.html" class="nav__link">Boutique</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+        <a href="rejoindre.html" class="nav__cta">Inscription</a>
+      </div>
+      <button class="nav__burger" data-burger aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span><span></span><span></span><span></span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <a href="index.html#accueil" class="mobile-menu__link">Accueil</a>
+      <a href="club.html" class="mobile-menu__link">Le Club</a>
+      <a href="equipes.html" class="mobile-menu__link">Nos Équipes</a>
+      <a href="actualites.html" class="mobile-menu__link">Actualités</a>
+      <a href="partenaires.html" class="mobile-menu__link">Partenaires</a>
+      <a href="rejoindre.html" class="mobile-menu__link">Nous rejoindre</a>
+      <a href="boutique.html" class="mobile-menu__link">Boutique</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="rejoindre.html" class="mobile-menu__cta">S'inscrire au club</a>
+    </div>
+  </header>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <span class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep">/</span> <span class="current">Actualités</span></span>
+      <h1>Actualités</h1>
+      <p>Résultats du week-end, infos recrutement, événements et communiqués officiels du club, au même endroit.</p>
+    </div>
+  </section>
+
+  <!-- ============ FILTRES + ARTICLES ============ -->
+  <section class="section">
+    <div class="filters">
+      <button class="filter-btn is-active" data-filter="Tout" style="--c:var(--primary);--fg:#fff;">Tout <span class="count">9</span></button>
+      <button class="filter-btn" data-filter="Résultats" style="--c:var(--secondary);--fg:#fff;">Résultats <span class="count">3</span></button>
+      <button class="filter-btn" data-filter="Recrutement" style="--c:var(--navy-text);--fg:#fff;">Recrutement <span class="count">2</span></button>
+      <button class="filter-btn" data-filter="Événements" style="--c:var(--accent);--fg:var(--primary);">Événements <span class="count">2</span></button>
+      <button class="filter-btn" data-filter="Communiqués" style="--c:var(--navy-dark);--fg:#fff;">Communiqués <span class="count">2</span></button>
+    </div>
+
+    <div class="news-grid">
+      <a href="#" class="news-card" data-cat="Résultats">
+        <div class="news-card__media"><div class="img-placeholder">Photo match R2</div><span class="news-card__cat" style="background:var(--secondary);color:#fff;">RÉSULTATS</span></div>
+        <div class="news-card__body">
+          <span class="news-card__date">22 juin 2026</span>
+          <h3 class="news-card__title">La R2 s'impose 3-1 face à Brétigny</h3>
+          <p class="news-card__excerpt">Portée par un doublé de Mehdi Saïdi, l'équipe fanion enchaîne une troisième victoire et reste accrochée au haut de tableau.</p>
+          <span class="news-card__more">Lire l'article →</span>
+        </div>
+      </a>
+      <a href="#" class="news-card" data-cat="Recrutement">
+        <div class="news-card__media"><div class="img-placeholder">Photo détection</div><span class="news-card__cat" style="background:var(--navy-text);color:#fff;">RECRUTEMENT</span></div>
+        <div class="news-card__body">
+          <span class="news-card__date">18 juin 2026</span>
+          <h3 class="news-card__title">Détections U13 : viens tester mardi 8 juillet</h3>
+          <p class="news-card__excerpt">Le club ouvre ses portes aux joueurs nés en 2013-2014. Rendez-vous à 18h au stade, crampons et envie suffisent.</p>
+          <span class="news-card__more">Lire l'article →</span>
+        </div>
+      </a>
+      <a href="#" class="news-card" data-cat="Événements">
+        <div class="news-card__media"><div class="img-placeholder">Photo tournoi</div><span class="news-card__cat" style="background:var(--accent);color:var(--primary);">ÉVÉNEMENTS</span></div>
+        <div class="news-card__body">
+          <span class="news-card__date">10 juin 2026</span>
+          <h3 class="news-card__title">Tournoi des familles : une 12e édition réussie</h3>
+          <p class="news-card__excerpt">Plus de 300 personnes réunies autour des terrains pour une journée conviviale entre parents, enfants et bénévoles.</p>
+          <span class="news-card__more">Lire l'article →</span>
+        </div>
+      </a>
+      <a href="#" class="news-card" data-cat="Résultats">
+        <div class="news-card__media"><div class="img-placeholder">Photo U15</div><span class="news-card__cat" style="background:var(--secondary);color:#fff;">RÉSULTATS</span></div>
+        <div class="news-card__body">
+          <span class="news-card__date">15 juin 2026</span>
+          <h3 class="news-card__title">Les U15 qualifiés pour les phases finales</h3>
+          <p class="news-card__excerpt">Une saison solide récompensée : les U15 de Samir Haddad disputeront le Final Four départemental fin juin.</p>
+          <span class="news-card__more">Lire l'article →</span>
+        </div>
+      </a>
+      <a href="#" class="news-card" data-cat="Communiqués">
+        <div class="news-card__media"><div class="img-placeholder">Photo club-house</div><span class="news-card__cat" style="background:var(--navy-dark);color:#fff;">COMMUNIQUÉS</span></div>
+        <div class="news-card__body">
+          <span class="news-card__date">12 juin 2026</span>
+          <h3 class="news-card__title">Assemblée générale : rendez-vous le 28 juin</h3>
+          <p class="news-card__excerpt">Tous les licenciés et parents sont invités à l'AG annuelle, suivie d'un pot de fin de saison au club-house.</p>
+          <span class="news-card__more">Lire l'article →</span>
+        </div>
+      </a>
+      <a href="#" class="news-card" data-cat="Recrutement">
+        <div class="news-card__media"><div class="img-placeholder">Photo entraînement</div><span class="news-card__cat" style="background:var(--navy-text);color:#fff;">RECRUTEMENT</span></div>
+        <div class="news-card__body">
+          <span class="news-card__date">5 juin 2026</span>
+          <h3 class="news-card__title">Le club recherche un éducateur U11 diplômé</h3>
+          <p class="news-card__excerpt">Tu as ton BMF ou un CFF et envie de t'investir auprès des jeunes ? Le pôle Préformation cherche un renfort.</p>
+          <span class="news-card__more">Lire l'article →</span>
+        </div>
+      </a>
+      <a href="#" class="news-card" data-cat="Événements">
+        <div class="news-card__media"><div class="img-placeholder">Photo stage</div><span class="news-card__cat" style="background:var(--accent);color:var(--primary);">ÉVÉNEMENTS</span></div>
+        <div class="news-card__body">
+          <span class="news-card__date">1 juin 2026</span>
+          <h3 class="news-card__title">Stage multisports pendant les vacances d'été</h3>
+          <p class="news-card__excerpt">Du 7 au 11 juillet, stage football + activités pour les 6-13 ans. Places limitées, inscriptions ouvertes.</p>
+          <span class="news-card__more">Lire l'article →</span>
+        </div>
+      </a>
+      <a href="#" class="news-card" data-cat="Résultats">
+        <div class="news-card__media"><div class="img-placeholder">Photo vétérans</div><span class="news-card__cat" style="background:var(--secondary);color:#fff;">RÉSULTATS</span></div>
+        <div class="news-card__body">
+          <span class="news-card__date">8 juin 2026</span>
+          <h3 class="news-card__title">Les Vétérans terminent 2e de leur poule</h3>
+          <p class="news-card__excerpt">Belle saison pour les Vétérans du dimanche, qui décrochent la 2e place et la montée pour l'an prochain.</p>
+          <span class="news-card__more">Lire l'article →</span>
+        </div>
+      </a>
+      <a href="#" class="news-card" data-cat="Communiqués">
+        <div class="news-card__media"><div class="img-placeholder">Photo permanence</div><span class="news-card__cat" style="background:var(--navy-dark);color:#fff;">COMMUNIQUÉS</span></div>
+        <div class="news-card__body">
+          <span class="news-card__date">20 mai 2026</span>
+          <h3 class="news-card__title">Nouveaux horaires de la permanence</h3>
+          <p class="news-card__excerpt">À compter de juin, la permanence du club se tiendra le mercredi de 14h à 18h et le samedi de 9h à 12h.</p>
+          <span class="news-card__more">Lire l'article →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ GALERIE ============ -->
+  <section class="section--band">
+    <div class="section">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">EN IMAGES</span>
+          <h2 class="section-title">Galerie par événement</h2>
+        </div>
+        <span class="section-head__meta">Glissez vos photos sur chaque vignette.</span>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><div class="img-placeholder">Tournoi des familles</div><div class="gallery-item__cap"><span class="gallery-item__title">Tournoi des familles</span><span class="gallery-item__meta">Juin 2026 · 14 photos</span></div></div>
+        <div class="gallery-item"><div class="img-placeholder">R2 vs Ris-Orangis</div><div class="gallery-item__cap"><span class="gallery-item__title">R2 vs Ris-Orangis</span><span class="gallery-item__meta">Juin 2026 · 22 photos</span></div></div>
+        <div class="gallery-item"><div class="img-placeholder">Stage de Pâques U11</div><div class="gallery-item__cap"><span class="gallery-item__title">Stage de Pâques U11</span><span class="gallery-item__meta">Avril 2026 · 18 photos</span></div></div>
+        <div class="gallery-item"><div class="img-placeholder">Loto du club</div><div class="gallery-item__cap"><span class="gallery-item__title">Loto du club</span><span class="gallery-item__meta">Mars 2026 · 9 photos</span></div></div>
+        <div class="gallery-item"><div class="img-placeholder">Remise des équipements</div><div class="gallery-item__cap"><span class="gallery-item__title">Remise des équipements</span><span class="gallery-item__meta">Sept. 2025 · 27 photos</span></div></div>
+        <div class="gallery-item"><div class="img-placeholder">Plateau Baby Foot</div><div class="gallery-item__cap"><span class="gallery-item__title">Plateau Baby Foot</span><span class="gallery-item__meta">Nov. 2025 · 31 photos</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-club">
+        <div class="footer-club__top">
+          <img src="images/logo.svg" data-config-src="logoUrl" alt="Logo du club" class="footer-club__logo">
+          <span class="footer-club__name" data-config="clubName">Paray FC</span>
+        </div>
+        <p class="footer-club__text" data-config="aboutText">Le club de football de Paray-Vieille-Poste depuis 1947. 524 licenciés, 31 équipes, une même passion.</p>
+        <div class="social">
+          <a href="#" data-config-href="social.facebook" aria-label="Facebook" class="social__link">f</a>
+          <a href="#" data-config-href="social.instagram" aria-label="Instagram" class="social__link">IG</a>
+          <a href="#" data-config-href="social.tiktok" aria-label="TikTok" class="social__link">TT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col__title">Navigation</h4>
+        <a href="index.html#accueil" class="footer-link">Accueil</a>
+        <a href="club.html" class="footer-link">Le Club</a>
+        <a href="equipes.html" class="footer-link">Nos Équipes</a>
+        <a href="actualites.html" class="footer-link">Actualités</a>
+        <a href="partenaires.html" class="footer-link">Partenaires</a>
+        <a href="rejoindre.html" class="footer-link">Nous rejoindre</a>
+        <a href="boutique.html" class="footer-link">Boutique</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col__title">Contact</h4>
+        <p class="footer-contact">📍 <span data-config-html="addressHtml">1 rue de Kruft<br>91550 Paray-Vieille-Poste</span></p>
+        <p class="footer-contact" data-config-show="phone" hidden>📞 <a data-config="phone" data-config-href="telHref" href="#"></a></p>
+        <p class="footer-contact" style="margin-top:12px;">✉️ <a href="mailto:parayfootball@gmail.com" data-config="email" data-config-href="emailHref">parayfootball@gmail.com</a></p>
+        <p class="footer-contact--muted">Permanence : mercredi 14h-18h<br>et samedi 9h-12h au club-house</p>
+      </div>
+      <div class="footer-col footer-shop">
+        <h4 class="footer-col__title">Boutique officielle</h4>
+        <p>Maillots, survêtements et accessoires aux couleurs du club.</p>
+        <a href="boutique.html" data-config-href="shopUrl" class="footer-shop__btn">Voir la boutique →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Paray Football Club · Affilié à la FFF</span>
+      <span>Mentions légales · Politique de confidentialité</span>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
