@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact — Votre Club FC</title>
-  <meta name="description" content="Contactez le Votre Club FC : adresse du stade, emails général/technique/équipement, plan d'accès et formulaire.">
+  <meta name="description" content="Contactez votre club : adresse, e-mail, plan d'accès et formulaire.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
         <img src="images/logo.svg" data-config-src="logoUrl" alt="Logo du club" class="logo-img">
         <span class="logo-text">
           <span class="logo-name" data-config="clubName">Votre Club FC</span>
-          <span class="logo-since" data-config="since">DEPUIS 1947</span>
+          <span class="logo-since" data-config="since">DEPUIS 1920</span>
         </span>
       </a>
       <div class="nav__links">
@@ -49,7 +49,6 @@
     </div>
   </header>
 
-  <!-- ============ EN-TÊTE ============ -->
   <section class="page-hero">
     <div class="page-hero__inner">
       <span class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep">/</span> <span class="current">Contact</span></span>
@@ -58,42 +57,28 @@
     </div>
   </section>
 
-  <!-- ============ COORDONNÉES + FORMULAIRE ============ -->
   <section class="section">
     <div class="split-grid">
-      <!-- Coordonnées -->
       <div>
         <span class="eyebrow">NOS COORDONNÉES</span>
         <h2 class="section-title">Où nous trouver</h2>
         <div class="info-list">
           <div class="info-item">
             <span class="info-item__icon" style="background:var(--secondary);">📍</span>
-            <div><span class="info-item__label">ADRESSE</span><span class="info-item__value">Stade Paul Vaillant-Couturier — 1 avenue du Stade, 00000 Votre Ville</span></div>
+            <div><span class="info-item__label">ADRESSE</span><span class="info-item__value" data-config="addressLine">1 avenue du Stade, 00000 Votre Ville</span></div>
           </div>
           <div class="info-item">
             <span class="info-item__icon" style="background:var(--accent);">✉️</span>
-            <div><span class="info-item__label">EMAIL GÉNÉRAL</span><a href="mailto:contact@votreclub.fr" class="info-item__value">contact@votreclub.fr</a><span class="info-item__desc">Questions générales, inscriptions et vie du club.</span></div>
-          </div>
-          <div class="info-item">
-            <span class="info-item__icon" style="background:var(--navy-text);">✉️</span>
-            <div><span class="info-item__label">EMAIL TECHNIQUE</span><a href="mailto:technique.parayfc@gmail.com" class="info-item__value">technique.parayfc@gmail.com</a><span class="info-item__desc">Tout dysfonctionnement terrain & organisation.</span></div>
-          </div>
-          <div class="info-item">
-            <span class="info-item__icon" style="background:var(--navy-dark);">✉️</span>
-            <div><span class="info-item__label">EMAIL ÉQUIPEMENT</span><a href="mailto:equipement.parayfc@gmail.com" class="info-item__value">equipement.parayfc@gmail.com</a><span class="info-item__desc">Commandes de matériel et équipements du club.</span></div>
+            <div><span class="info-item__label">EMAIL</span><a href="mailto:contact@votreclub.fr" class="info-item__value" data-config="email" data-config-href="emailHref">contact@votreclub.fr</a><span class="info-item__desc">Questions générales, inscriptions et vie du club.</span></div>
           </div>
           <div class="info-item">
             <span class="info-item__icon" style="background:#5B647E;">🕑</span>
             <div><span class="info-item__label">PERMANENCE</span><span class="info-item__value">Mercredi 14h-18h · Samedi 9h-12h au club-house</span></div>
           </div>
         </div>
-        <!-- Carte Google Maps -->
-        <div class="map-frame">
-          <iframe title="Plan d'accès Votre Club FC" src="https://www.google.com/maps?q=1%20rue%20de%20Kruft,%2000000%20Votre Ville&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        <div class="map-frame"><div class="img-placeholder">Plan d'accès — intégrez votre carte Google Maps ici</div></div>
       </div>
 
-      <!-- Formulaire -->
       <div class="form-card">
         <div class="form-success" data-form-success hidden>
           <span class="form-success__icon">✓</span>
@@ -127,7 +112,7 @@
           <img src="images/logo.svg" data-config-src="logoUrl" alt="Logo du club" class="footer-club__logo">
           <span class="footer-club__name" data-config="clubName">Votre Club FC</span>
         </div>
-        <p class="footer-club__text" data-config="aboutText">Le club de football de Votre Ville depuis 1947. 524 licenciés, 31 équipes, une même passion.</p>
+        <p class="footer-club__text" data-config="aboutText">Le club de football de votre ville. Rejoignez l'aventure !</p>
         <div class="social">
           <a href="#" data-config-href="social.facebook" aria-label="Facebook" class="social__link">f</a>
           <a href="#" data-config-href="social.instagram" aria-label="Instagram" class="social__link">IG</a>
@@ -159,7 +144,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Votre Club FC · Affilié à la FFF</span>
+      <span>© 2026 <span data-config="clubName">Votre Club FC</span> · Affilié à la FFF</span>
       <span>Mentions légales · Politique de confidentialité</span>
     </div>
   </footer>
