@@ -301,5 +301,21 @@
   <script src="js/news.js"></script>
   <script src="js/main.js"></script>
   <script src="js/weekend.js"></script>
+  <!-- Aperçu live (demo.html) : applique le thème reçu via postMessage -->
+  <script>
+    (function () {
+      window.addEventListener('message', function (e) {
+        var d = e.data;
+        if (!d || d.type !== 'previewTheme') return;
+        var r = document.documentElement;
+        if (d.primary)   r.style.setProperty('--primary', d.primary);
+        if (d.secondary) r.style.setProperty('--secondary', d.secondary);
+        if (d.accent)    r.style.setProperty('--accent', d.accent);
+        if (typeof d.clubName === 'string') {
+          document.querySelectorAll('[data-config="clubName"]').forEach(function (el) { el.textContent = d.clubName; });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

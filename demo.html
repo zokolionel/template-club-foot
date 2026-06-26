@@ -184,21 +184,30 @@
         r.style.setProperty('--a', aEl.value);
       }
 
-      /* Applique les réglages dans l'aperçu (iframe même origine) */
+      /* Applique les réglages dans l'aperçu */
       function applyToFrame() {
+        var payload = {
+          type: 'previewTheme',
+          clubName: nameEl.value || 'Votre Club FC',
+          primary: pEl.value,
+          secondary: sEl.value,
+          accent: aEl.value
+        };
+        /* 1) postMessage — robuste, fonctionne quelle que soit l'origine (le listener est dans index.html) */
+        try { if (frame.contentWindow) frame.contentWindow.postMessage(payload, '*'); } catch (e) {}
+        /* 2) Repli : accès DOM direct (utile en local file://) */
         try {
-          var doc = frame.contentDocument || frame.contentWindow.document;
-          if (!doc || !doc.documentElement) return;
-          var r = doc.documentElement;
-          r.style.setProperty('--primary', pEl.value);
-          r.style.setProperty('--secondary', sEl.value);
-          r.style.setProperty('--accent', aEl.value);
-          doc.querySelectorAll('[data-config="clubName"]').forEach(function (el) {
-            el.textContent = nameEl.value || 'Votre Club FC';
-          });
-        } catch (e) {
-          /* file:// peut bloquer l'accès à l'iframe — fonctionne une fois déployé */
-        }
+          var doc = frame.contentDocument || (frame.contentWindow && frame.contentWindow.document);
+          if (doc && doc.documentElement) {
+            var r = doc.documentElement;
+            r.style.setProperty('--primary', pEl.value);
+            r.style.setProperty('--secondary', sEl.value);
+            r.style.setProperty('--accent', aEl.value);
+            doc.querySelectorAll('[data-config="clubName"]').forEach(function (el) {
+              el.textContent = payload.clubName;
+            });
+          }
+        } catch (e) { /* ignoré */ }
       }
 
       function applyAll() { paintSelf(); applyToFrame(); }
