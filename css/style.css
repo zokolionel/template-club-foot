@@ -606,14 +606,14 @@ a.info-item__value:hover { color: var(--red); }
 .product-btn { font-size: 12.5px; font-weight: 700; color: var(--navy); border: 1.5px solid #DDE1EC; padding: 8px 14px; border-radius: 8px; transition: all .15s; }
 .product-btn:hover { border-color: var(--navy-text); background: #F8F9FC; }
 
-.skita-band { position: relative; overflow: hidden; background: var(--navy); border-radius: 20px; padding: clamp(30px, 5vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(28px, 4vw, 48px); align-items: center; }
-.skita-band__deco { position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; border-radius: 50%; background: rgb(from var(--accent) r g b / .1); }
-.skita-txt { position: relative; z-index: 2; }
-.skita-txt h2 { font-family: Cambria, Georgia, serif; font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.3rem); color: #fff; margin-top: 10px; line-height: 1.15; }
-.skita-txt p { font-size: 15px; color: #C9D0E4; line-height: 1.65; margin-top: 14px; max-width: 44ch; }
-.skita-txt .eyebrow { color: var(--gold); }
-.skita-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-.skita-fineprint { font-size: 12.5px; color: var(--grey-soft); margin-top: 14px; }
+.shop-band { position: relative; overflow: hidden; background: var(--navy); border-radius: 20px; padding: clamp(30px, 5vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(28px, 4vw, 48px); align-items: center; }
+.shop-band__deco { position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; border-radius: 50%; background: rgb(from var(--accent) r g b / .1); }
+.shop-txt { position: relative; z-index: 2; }
+.shop-txt h2 { font-family: Cambria, Georgia, serif; font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.3rem); color: #fff; margin-top: 10px; line-height: 1.15; }
+.shop-txt p { font-size: 15px; color: #C9D0E4; line-height: 1.65; margin-top: 14px; max-width: 44ch; }
+.shop-txt .eyebrow { color: var(--gold); }
+.shop-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.shop-fineprint { font-size: 12.5px; color: var(--grey-soft); margin-top: 14px; }
 .qr-card { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .qr-box { width: 180px; height: 180px; background: #fff; border-radius: 16px; display: grid; place-items: center; box-shadow: 0 12px 30px rgba(0,0,0,.25); }
 .qr-inner { width: 140px; height: 140px; border: 2px dashed #C2C8D6; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
